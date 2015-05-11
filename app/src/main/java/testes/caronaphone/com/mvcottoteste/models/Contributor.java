@@ -1,8 +1,8 @@
 package testes.caronaphone.com.mvcottoteste.models;
 
 
-import testes.caronaphone.com.mvcottoteste.events.ContributorChangedEvent;
-import testes.caronaphone.com.mvcottoteste.events.SingletonBus;
+import testes.caronaphone.com.mvcottoteste.shared.events.ContributorChangedEvent;
+import testes.caronaphone.com.mvcottoteste.shared.events.SingletonBus;
 
 /**
  * Created by -Bernardo on 2015-05-07.

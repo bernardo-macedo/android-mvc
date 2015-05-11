@@ -2,11 +2,12 @@ package testes.caronaphone.com.mvcottoteste.models;
 
 import java.util.ArrayList;
 
-import testes.caronaphone.com.mvcottoteste.events.ContributorListChangedEvent;
-import testes.caronaphone.com.mvcottoteste.events.SingletonBus;
+import testes.caronaphone.com.mvcottoteste.shared.events.ContributorListChangedEvent;
+import testes.caronaphone.com.mvcottoteste.shared.events.SingletonBus;
 
 /**
  * Created by -Bernardo on 2015-05-10.
+ * Classe modelo da resposta da requisicao de uma lista de Contributors
  */
 public class ContributorList extends ArrayList<Contributor> {
 
@@ -53,14 +54,6 @@ public class ContributorList extends ArrayList<Contributor> {
         super.clear();
         super.addAll(contributors);
         notifyChange(ContributorListChangedEvent.ListChange.ADDALL, null);
-    }
-
-    private void notifyChange(ContributorListChangedEvent.ListChange type) {
-        int[] changedIndexes = new int[super.size()];
-        for (int i = 0; i < super.size(); i++) {
-            changedIndexes[i] = i;
-        }
-        notifyChange(type, changedIndexes);
     }
 
     private void notifyChange(ContributorListChangedEvent.ListChange type, int changedIndex) {
